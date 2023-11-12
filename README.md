@@ -1,7 +1,6 @@
 # ISU Test Project
 
-[!Full Report Title](./other/screenshots/FullReport%20Title.png)
-[!Faculty Report Title](./other/screenshots/FacultyReport%20Title.png)
+![FullReport Title](https://github.com/Template0Dev/ISU-Test-Project/assets/148116566/3b7dc4d4-e54b-4bba-a17c-fd00582bc15f)
 
 ## RU
 
