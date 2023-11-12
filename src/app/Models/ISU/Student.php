@@ -5,6 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
+    protected $table = 'student';
+    
     protected $casts = [
         'id' => 'integer',
         'isu_id' => 'integer',
@@ -31,5 +33,15 @@ class Student extends Model
     public function group()
     {
         return $this -> belongsTo(StudentGroup::class, 'group_id', 'id');
+    }
+
+    public function getBioString(): string {
+        $shortenName = mb_substr($this->name, 0, 1).'.';
+        $shortenPatronymic = mb_substr($this->patronymic, 0, 1) ?? '';
+        if ($shortenPatronymic != '') {
+            $shortenPatronymic = $shortenPatronymic.'.';
+        }
+
+        return trim("$this->surname $shortenName $shortenPatronymic");
     }
 }

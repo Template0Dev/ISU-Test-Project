@@ -7,10 +7,6 @@ class Contract extends Model
 {
     protected $table = 'contract';
 
-    protected $primaryKey = 'id';
-
-    public $incrementing = true;
-
     protected $casts = [
         'id' => 'integer',
         'student_id' => 'integer',

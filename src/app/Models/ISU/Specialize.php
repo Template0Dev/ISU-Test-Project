@@ -5,6 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Specialize extends Model 
 {
+    protected $table = 'specialize';
+    
     protected $casts = [
         'id' => 'integer',
         'faculty_id' => 'integer',

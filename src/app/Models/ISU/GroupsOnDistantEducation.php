@@ -5,6 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class GroupsOnDistantEducation extends Model
 {
+    protected $table = 'groups_on_distant_education';
+    
     protected $casts = [
         'id' => 'integer',
         'group_id' => 'integer',

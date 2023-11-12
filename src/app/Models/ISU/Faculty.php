@@ -7,10 +7,6 @@ class Faculty extends Model
 {
     protected $table = 'faculty';
 
-    protected $primaryKey = 'id';
-
-    public $incrementing = true;
-
     protected $casts = [
         'id' => 'integer',
         'code' => 'integer',

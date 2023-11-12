@@ -5,6 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class EducationProgram extends Model
 {
+    protected $table = 'education_program';
+    
     protected $casts = [
         'id' => 'integer',
         'profile_id' => 'integer',

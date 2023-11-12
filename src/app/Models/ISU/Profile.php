@@ -5,11 +5,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model 
 {
+    protected $table = 'profile';
+    
     protected $casts = [
         'id' => 'integer',
         'specialize_id' => 'integer',
-        'name' => 'string',
-        'education_duration' => 'interval'
+        'name' => 'string'
     ];
 
     protected $fillable = [

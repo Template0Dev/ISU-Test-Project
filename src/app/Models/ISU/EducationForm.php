@@ -5,6 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class EducationForm extends Model 
 {
+    protected $table = 'education_form';
+
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',

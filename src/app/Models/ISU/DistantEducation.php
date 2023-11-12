@@ -5,6 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class DistantEducation extends Model
 {
+    protected $table = 'distant_education';
+
     protected $casts = [
         'id' => 'integer',
         'begin_date' => 'datetime',
