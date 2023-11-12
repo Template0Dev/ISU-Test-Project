@@ -17,15 +17,30 @@ Route::get('/', function () {
     return view('Home');
 });
 
-Route::get('/summary', function () {
-    $faculty = request('faculty');
-    if ($faculty == '') {
-        BrowserCoreLogger::writeToLog('Faculty was not specified, redirection to overview page.');
-        return view('/overview/Summary');
-    } else {
-        BrowserCoreLogger::writeToLog("Specified ($faculty) have been found, redirection to specific page.");
-        return view('/overview/Specific', ['faculty' => $faculty]);
+Route::get('/overview', function () {
+    $faculties = request('faculties');
+    $eduForms = request('eduForms') ?? array('О', 'ОЗ', 'З');
+    if ($faculties != null) {
+        $facultiesParameter = implode(', ', array_map(fn($value) => "'$value'", $faculties));
+        $eduFormsParameter = implode(', ', array_map(fn($value) => "'$value'", $eduForms));
+
+        BrowserCoreLogger::writeToLog("Specified faculty(-ies) have been found, redirection to specific page.");
+        return view('/overview/Specific', [
+            'eduForms' => $eduForms,
+            'model' => DB::select("
+                SELECT *
+                FROM get_students_list__by_faculties_and_edu_forms(
+                    ARRAY[$facultiesParameter],
+                    ARRAY[$eduFormsParameter]
+                ) 
+                ORDER BY faculty_name;"
+            ),
+            'faculties' => $faculties
+        ]);
     }
+
+    BrowserCoreLogger::writeToLog('Faculty was not specified, redirection to overview page.');
+    return view('/overview/Summary', ['model' => App\Models\ISU\Views\ReportFull::all()]);
 });
 
 Route::get('/data', function () {
