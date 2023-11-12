@@ -1,6 +1,6 @@
 # ISU Test Project
 
-![FullReport Title](https://github.com/Template0Dev/ISU-Test-Project/assets/148116566/3b7dc4d4-e54b-4bba-a17c-fd00582bc15f)
+![FullReport Title](https://github.com/Template0Dev/ISU-Test-Project/assets/148116566/b7e9fda4-9bbe-441a-8bd8-1f94d4e9f0c8)
 
 ## RU
 
