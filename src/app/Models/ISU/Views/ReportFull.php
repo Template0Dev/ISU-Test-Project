@@ -5,6 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReportFull extends Model 
 {
+    protected $table = 'report_full';
+
     protected $casts = [
         'Факультет / Институт' => 'string',
 
